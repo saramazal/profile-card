@@ -50,12 +50,31 @@ const Title =({
       required/>
   </div>
 
+const Mail =({
+  onChange,
+  value
+})=> 
+  <div className="field">
+    <label thmlFor="mail">mail:
+    </label>
+    <input 
+      id="mail" 
+      type="text" 
+      onChange={onChange} 
+      maxLength="35" 
+      value={value} 
+      placeholder="Mail" 
+      required/>
+  </div>
 
+
+    
 const Profile =({
   onSubmit,
   src,
   name,
   title,
+  mail
 })=>
   <div className="card">
     <form onSubmit={onSubmit}>
@@ -67,6 +86,7 @@ const Profile =({
       </label>
       <div className="name">{name}</div>
       <div className="title">{title}</div>
+      <div className="mail">{mail}</div>
       <button type="submit" className="edit">Edit Profile </button>
     </form>
   </div>
@@ -90,6 +110,7 @@ class CardProfile extends React.Component {
     imagePreviewUrl: '',
     name:'',
     title:'',
+    mail:'',
     active: 'edit'
   }
 
@@ -118,6 +139,12 @@ class CardProfile extends React.Component {
       title,
     });
   }
+  editMail = e => {
+    const mail = e.target.value;
+    this.setState({
+      mail,
+    });
+  }
   
   handleSubmit= e =>{
     e.preventDefault();
@@ -130,7 +157,8 @@ class CardProfile extends React.Component {
   render() {
     const {imagePreviewUrl, 
            name, 
-           title, 
+           title,
+           mail,
            active} = this.state;
     return (
       <div>
@@ -139,13 +167,15 @@ class CardProfile extends React.Component {
             <ImgUpload onChange={this.photoUpload} src={imagePreviewUrl}/>
             <Name onChange={this.editName} value={name}/>
             <Title onChange={this.editTitle} value={title}/>
+            <Mail onChange={this.editMail} value={mail} />
           </Edit>
         ):(
           <Profile 
             onSubmit={this.handleSubmit} 
             src={imagePreviewUrl} 
             name={name} 
-            title={title}/>)}
+            title={title}
+            mail={mail} />)}
         
       </div>
     )
