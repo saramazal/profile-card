@@ -27,6 +27,7 @@ body{
 }
 h1 {
 color: var(--game-color-secondary);
+  font-weight: normal;
 }
 
 .card{
@@ -112,10 +113,13 @@ label{
 
 input{
   border-radius: 15px;
-  border: 1px solid #767676;
+  border: 1px solid var(--game-color-secondary);
   padding: 5px 5px 5px 10px;
   font-size: 18px;
   transition: 0.2s;
+}
+input[type] {
+  color: var(--game-color-lgray);
 }
 input:focus{
   outline: none;
@@ -124,10 +128,12 @@ input:focus{
 input::placeholder{
   color: #bebebe;
 }
-.name{ 
+.name { 
   text-align: center;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: normal;
+  letter-spacing: 2px;
+  font-size: 2em;
   color: var(--game-color-secondary);
   max-width: 220px;
   overflow-wrap: break-word;
@@ -140,36 +146,35 @@ input::placeholder{
 }
 button{
   position: relative;
+  width: 180px;
   color: var(--game-color-secondary);
   letter-spacing: 1px;
   margin: 20px;
+  padding: 5px 5px;
   font-size: 18px;
-  padding: 7px 3px;
   text-align: center;
   transition: 0.5s;
-  border-radius: 10px;
-  cursor: pointer;
   border-radius: 20px;
-  border: none;
-  background-color: var(--game-color-primary);
+  border: 1px solid var(--game-color-secondary);
+  background-color: var(--game-color-dark);
+  
 }
 .save{
   font-weight: 600;
-  left: -20px;
+  width: 160px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  width: 2px;
   box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
 }
 .edit{
   color: #fff;
-  width: 180px;
+  width: 170px;
 }
 button:hover{
   left: 0;
   color: #fff;
-  width: 180px;
-  box-shadow: 0px 0px 12px 0px  #FF0099;
+  width: 170px;
+  box-shadow: 0px 0px 12px 0px  var(--game-color-secondary);
 }
 button:focus{
   outline: none;
