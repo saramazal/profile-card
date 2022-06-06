@@ -149,7 +149,7 @@ button{
   width: 180px;
   color: var(--game-color-secondary);
   letter-spacing: 1px;
-  margin: 20px;
+  margin: 70px;
   padding: 5px 5px;
   font-size: 18px;
   text-align: center;
@@ -167,7 +167,6 @@ button{
   box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
 }
 .edit{
-  color: #fff;
   width: 170px;
 }
 button:hover{
